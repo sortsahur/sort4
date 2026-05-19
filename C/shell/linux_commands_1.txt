@@ -1,0 +1,16 @@
+# Linux Commands Set 1
+
+# 1. Redirect the output of cp command to a file named outfile
+cp source_file dest_file > outfile 2>&1
+
+# 2. Select lines with 4-letter words and redirect to file named list
+grep -w '[a-zA-Z]\{4\}' outfile > list
+
+# 3. Assign write permission to owner and remove read permission from group (relative)
+chmod u+w,g-r test
+
+# 4. Create alias 'ls' that always lists all files including hidden
+alias ls='ls -a'
+
+# 5. Count the number of words in the list file
+wc -w list

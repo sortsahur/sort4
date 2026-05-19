@@ -1,0 +1,16 @@
+# Linux Commands Set 3
+
+# 1. Redirect the output of grep command to a file named outfile
+grep "pattern" inputfile > outfile
+
+# 2. Select lines with a digit as one of the characters and redirect to list
+grep '[0-9]' outfile > list
+
+# 3. Assign execute permission to other user and remove write permission from group (relative)
+chmod o+x,g-w test
+
+# 4. Create alias 'rm' that always deletes file interactively
+alias rm='rm -i'
+
+# 5. Count the currently logged in users to the system
+who | wc -l

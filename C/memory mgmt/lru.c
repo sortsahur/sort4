@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int nf, n;
+    printf("\nEnter number of frames: ");
+    scanf("%d", &nf);
+    printf("Enter length of reference string: ");
+    scanf("%d", &n);
+
+    int ref[n], frames[nf], timestamp[nf];
+    printf("Enter reference string:\n");
+    for (int i = 0; i < n; i++) scanf("%d", &ref[i]);
+    for (int i = 0; i < nf; i++) { frames[i] = -1; timestamp[i] = -1; }
+
+    int pf = 0;
+
+    printf("\n%-10s", "Page");
+    for (int i = 0; i < nf; i++) printf("F%-8d", i);
+    printf("PF\n");
+
+    for (int i = 0; i < n; i++) {
+        int found = 0;
+        for (int j = 0; j < nf; j++)
+            if (frames[j] == ref[i]) { found = 1; timestamp[j] = i; break; }
+
+        int fault = 0;
+        if (!found) {
+            int replace = -1;
+            for (int j = 0; j < nf; j++)
+                if (frames[j] == -1) { replace = j; break; }
+
+            if (replace == -1) {
+                int mintime = INT_MAX;
+                for (int j = 0; j < nf; j++)
+                    if (timestamp[j] < mintime) { mintime = timestamp[j]; replace = j; }
+            }
+
+            frames[replace] = ref[i];
+            timestamp[replace] = i;
+            pf++;
+            fault = 1;
+        }
+
+        printf("%-10d", ref[i]);
+        for (int j = 0; j < nf; j++) {
+            if (frames[j] == -1) printf("%-9s", "-");
+            else printf("%-9d", frames[j]);
+        }
+        printf("%s\n", fault ? "Yes" : "No");
+    }
+
+    printf("\nTotal page faults (LRU): %d\n", pf);
+    return 0;
+}

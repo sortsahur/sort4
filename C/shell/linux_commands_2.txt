@@ -1,0 +1,24 @@
+# Linux Commands Set 2
+
+# 1. Redirect the output of mv command to a file named outfile
+mv source_file dest_file > outfile 2>&1
+
+# 2. List all hidden files under current directory and store in 'hidden' file
+ls -a | grep '^\.' > hidden
+
+# 3. Assign write permission to group user and remove execute permission from owner (absolute)
+# Assuming original permissions are rwxr--r-- (744), new: rw-rw-r-- (664)
+chmod 664 test
+
+# 4. Create soft and hard link for given file
+ln file hardlink_file
+ln -s file softlink_file
+
+# 5. Convert lowercase to uppercase of a given file
+tr 'a-z' 'A-Z' < file > output_file
+
+# 6. Extract 2nd and 3rd character of a given file
+cut -c2-3 file
+
+# 7. Display how many times lines are repeated in a given file
+sort file | uniq -c
