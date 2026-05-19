@@ -1,0 +1,16 @@
+# Linux Commands Set 5
+
+# 1. Redirect the output of ls command to a file named outfile
+ls > outfile
+
+# 2. Select lines with a digit as one of the characters and redirect to list
+grep '[0-9]' outfile > list
+
+# 3. Assign execute permission to owner and remove read permission from other (relative)
+chmod u+x,o-r test
+
+# 4. Create alias 'rm' that always deletes file interactively
+alias rm='rm -i'
+
+# 5. Count the currently logged in users to the system
+who | wc -l

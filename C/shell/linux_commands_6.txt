@@ -1,0 +1,24 @@
+# Linux Commands Set 6
+
+# 1. Redirect the output of cat command to a file named outfile
+cat inputfile > outfile
+
+# 2. List all hidden files under current directory and store in 'hidden' file
+ls -a | grep '^\.' > hidden
+
+# 3. Assign write permission to owner and remove execute permission from other (absolute)
+# Assuming original permissions are rwxr-xr-x (755), new: rwxr-xr-- (754)
+chmod 754 test
+
+# 4. Create soft and hard link for given file
+ln file hardlink_file
+ln -s file softlink_file
+
+# 5. Convert lowercase to uppercase of a given file
+tr 'a-z' 'A-Z' < file > output_file
+
+# 6. Extract 1st and 10th character of a given file
+cut -c1,10 file
+
+# 7. Display how many times lines are repeated in a given file
+sort file | uniq -c
