@@ -1,0 +1,45 @@
+Hello World!                                   
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 3
+
+
+NOT SAME                                        
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 9
+
+
+*    *    *    *                                  
+*              *                                  
+*              *                                  
+*    *    *    *                                  
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 19
+
+
+The cat  purrs                                  
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 16
+
+
+apple is red                                   
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 19
+
+
+*                                                 
+*    *                                            
+*    *    *                                       
+*    *                                            
+*                                                 
+*                                                 
+*                                                 
+*                                                 
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 16
+
+
+NOW  YOU ARE HOW                               
+Process exited with status 0
+SI : 3  PI : 0  TI : 0   IR : H---   IC : 11
+
+
